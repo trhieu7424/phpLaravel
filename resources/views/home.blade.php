@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('layout.admin')
 
 @section('content')
-    <h1>Nội dung trang chủ</h1>
-    <p>Đây là nội dung tùy chỉnh của trang chủ.</p>
+    <h1>Trang quản trị</h1>
+
 @endsection

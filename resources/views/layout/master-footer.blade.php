@@ -1,3 +1,3 @@
 <footer>
-    <p>Footer</p>
+    <p>Coppyright anhtien96t@gmail.com</p>
 </footer>

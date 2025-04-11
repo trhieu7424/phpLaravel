@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.admin')
 
 @section('content')
     <form action="{{ route('cateaddpost') }}" method="POST">
