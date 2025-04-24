@@ -13,11 +13,17 @@ class ProductsTableSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-{
-    DB::table('products')->insert([
-        ['proname' => 'iPhone 15', 'price' => 25000000, 'description' => 'iPhone 15 128GB', 'cateid' => 1],
-        ['proname' => 'MacBook Pro', 'price' => 35000000, 'description' => 'MacBook Pro M1', 'cateid' => 2],
-        ['proname' => 'Tai nghe AirPods', 'price' => 5000000, 'description' => 'Tai nghe không dây', 'cateid' => 3],
-    ]);
-}
+    {
+        for ($i = 1; $i <= 15; $i++) {
+            DB::table('products')->insert([
+                'proname' => 'Sản phẩm '.$i,  // Tên sản phẩm
+                'price' => rand(150000, 500000),  // Giá ngẫu nhiên từ 150k-500k
+                'cateid' => rand(1, 9),  // ID danh mục ngẫu nhiên từ 1-9
+                'brandid' => rand(1, 9),  // ID thương hiệu ngẫu nhiên từ 1-9
+                'description' => 'Mô tả sản phẩm '.$i,
+                'created_at' => now(),  // Thời gian tạo
+                'updated_at' => now()   // Thời gian cập nhật
+            ]);
+        }
+    }
 }

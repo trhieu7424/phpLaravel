@@ -9,15 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class BrandsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table('brands')->insert([
-            ['brandname' => 'Apple', 'description' => 'Tập đoàn công nghệ Apple'],
-            ['brandname' => 'Samsung', 'description' => 'Tập đoàn công nghệ Samsung'],
-            ['brandname' => 'Xiaomi', 'description' => 'Tập đoàn công nghệ Xiaomi'],
-        ]);
+        for ($i = 0; $i < 20; $i++) {
+            DB::table('brands')->insert([
+                'brandname' => "Thương hiệu A$i",
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+                'show' => 1,
+                'description' => "Mô tả thương hiệu A$i",
+            ]);
+        }
     }
 }

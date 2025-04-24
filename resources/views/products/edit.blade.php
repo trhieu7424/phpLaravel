@@ -5,6 +5,8 @@
     <form action="{{ route('proeditpost') }}" class="w-50 mx-auto shadow p-3" method="POST">
         @csrf
         <h1>Sửa sản phẩm</h1>
+        <input type="hidden" name="id" value="{{ $data->id }}">
+
         <div class="form-group">
             <label for="proname">Tên sản phẩm</label>
             <input type="text" name="proname" id="proname" class="form-control" value="{{ $data->proname }}" >

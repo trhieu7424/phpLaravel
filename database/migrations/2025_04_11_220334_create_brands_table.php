@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('brandname', 100);
             $table->string('description', 300)->nullable();
+            $table->tinyInteger('show');
             $table->timestamps();
         });
     }

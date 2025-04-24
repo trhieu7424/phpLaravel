@@ -18,10 +18,16 @@ return new class extends Migration
             $table->string('description', 300)->nullable();
             $table->unsignedInteger('cateid');
             $table->timestamps();
-            
+
             $table->foreign('cateid', 'categories_cateid_foreign')
-                  ->references('cateid')
-                  ->on('categories');
+                ->references('cateid')
+                ->on('categories');
+
+            $table->unsignedBigInteger('brandid');
+
+            $table->foreign('brandid', 'brands_brandid_foreign')
+                ->references('id')
+                ->on('brands');
         });
     }
 
